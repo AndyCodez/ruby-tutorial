@@ -23,6 +23,8 @@ guessed_it = false
 until num_guesses == 10 || guessed_it
 
 	puts "You've got #{10 - num_guesses} guesses left."
+	tries_left = "*" * (10 - num_guesses)
+	puts tries_left
 	print "Make a guess: "
 	guess = gets.to_i
 
