@@ -19,7 +19,8 @@ attr_reader :name, :salary
 	def print_pay_stub
 		puts "Name:" #{name}
 		pay_for_period = (@salary / 365.0) * 14
-		puts "Pay this period: $#{pay_for_period}"
+		formatted_pay = format("%.2f", pay_for_period)
+		puts "Pay this period: $#{formatted_pay}"
 	end
 end
 
