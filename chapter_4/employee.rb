@@ -1,6 +1,11 @@
 class Employee
 attr_reader :name, :salary
 
+	def initialize
+		@name = "Anonymous"
+		@salary = 0.0
+	end
+
 	def name=(name)
 		if name == ""
 			raise "Name cannot be blank"
