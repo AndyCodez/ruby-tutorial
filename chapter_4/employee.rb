@@ -42,6 +42,19 @@ class SalariedEmployee < Employee
 end
 
 class HourlyEmployee < Employee
+
+	def self.security_guard(name)
+		HourlyEmployee.new(name, 19.25,  30)
+	end
+
+	def self.cashier(name)
+		HourlyEmployee.new(name, 12.75, 25)
+	end	
+
+	def self.janitor(name)
+		HourlyEmployee.new(name, 10.50, 20)
+	end
+
 	attr_reader :hourly_wage, :hours_per_week
 
 	def initialize(name = "Anonymous", hourly_wage = 0.0, hours_per_week = 0.0)
