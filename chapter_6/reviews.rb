@@ -7,5 +7,7 @@ puts lines
 
 relevant_lines = lines.find_all { |line| line.include?("Truncated") }
 
-puts "Relevant lines BELOW:"
-puts relevant_lines
+reviews = relevant_lines.reject { |line| line.include?("--") }
+
+puts "Reviews BELOW:"
+puts reviews
