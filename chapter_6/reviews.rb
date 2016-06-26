@@ -7,7 +7,7 @@ puts lines
 
 relevant_lines = lines.find_all { |line| line.include?("Truncated") }
 
-reviews = relevant_lines.reject { |line| line.include?("--") }.to_s
+reviews = relevant_lines.reject { |line| line.include?("--") }
 
 def find_adjective(string)
   words = string.split(" ")
@@ -15,7 +15,8 @@ def find_adjective(string)
   words[index + 1]
 end
 
-puts "adjective BELOW:"
-adjective = find_adjective(reviews)
-puts adjective
+adjectives = []
 
+adjectives = reviews.map { |review| find_adjective(review) }
+
+puts adjectives
