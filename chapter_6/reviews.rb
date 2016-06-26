@@ -17,6 +17,8 @@ end
 
 adjectives = []
 
-adjectives = reviews.map { |review| find_adjective(review) }
-
+adjectives = reviews.map do |review| 
+  adjective = find_adjective(review) 
+  "'#{adjective.capitalize}'"
+end
 puts adjectives
