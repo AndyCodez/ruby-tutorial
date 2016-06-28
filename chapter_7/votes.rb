@@ -6,7 +6,8 @@ end
 votes = Hash.new(0) 
 
 lines.each do |line|
-  name = line.chomp    
+  name = line.chomp   
+  name.upcase! #Normalize
   votes[name] += 1
 end
 
