@@ -17,5 +17,5 @@ def print_summary(candidate)
   puts "Birthplace: #{candidate.birthplace}"
 end
 
-rao = Candidate.new("Rao", age: 65, occupation: "Engineer", hobby: "Cracking jokes", birthplace: "Kisumu")
+rao = Candidate.new("Rao", occupation: "Engineer", age: 65, hobby: "Cracking jokes", birthplace: "Kisumu")
 print_summary(rao)
