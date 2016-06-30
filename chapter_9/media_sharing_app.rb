@@ -1,28 +1,33 @@
-class Clip
-  attr_reader :comments
-
-  def initialize
-    #When new instance is created, set up empty array to add comments to
-    @comments = []
+module AcceptComments
+  def comments
+    if @comments
+      @comments
+    else
+      @comments = []
+    end
   end
 
   def add_comment(comment)
     #Call "comments" method to get the array in @comments and append to it
     comments << comment
   end
+  
+end
 
+class Clip
   def play
     #Show ID of object we are playing
     puts "Playing #[object_id]..."
   end
-
 end
 
 class Video < Clip
+  include AcceptComments
   attr_accessor :resolution
 end
 
 class Song < Clip
+  include AcceptComments
   attr_accessor :beats_per_minute
 end
 
