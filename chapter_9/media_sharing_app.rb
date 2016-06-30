@@ -1,10 +1,7 @@
 module AcceptComments
   def comments
-    if @comments
-      @comments
-    else
-      @comments = []
-    end
+    #assigns a new value to @comments, but only if @comments is nil
+    @comments = @comments || []
   end
 
   def add_comment(comment)
