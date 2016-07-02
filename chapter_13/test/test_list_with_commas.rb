@@ -16,4 +16,9 @@ class TestListWithCommas < Minitest::Test
     @list.items = ['apple', 'orange', 'pear']
     assert('apple, orange, and pear' == @list.join)
   end
+
+  def test_it_prints_one_word_alone
+    @list.items = ['apple']
+    assert('apple' == @list.join)
+  end
 end
