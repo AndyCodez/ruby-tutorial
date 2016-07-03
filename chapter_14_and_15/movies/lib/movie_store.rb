@@ -7,6 +7,12 @@ class MovieStore
     @store = YAML::Store.new(file_name)
   end
 
+  #returns all movies in the store
+  def all
+    @store.transaction do
+      @store.roots.map {|id| @store[id] }
+    end
+  end
   #saves a movie to the store
   def save(movie)
     @store.transaction do
